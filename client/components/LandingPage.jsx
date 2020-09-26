@@ -1,9 +1,8 @@
 import React from 'react'
-
 import Filter from './Filter'
+import {MenuBook} from "@material-ui/icons";
 
-
-export default function LandingPage() {
+export const LandingPage = () => {
     
     return (
         <>

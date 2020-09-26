@@ -1,5 +1,5 @@
 import React from 'react'
-import LandingPage from './Filter'
+import { LandingPage } from './LandingPage'
 import {ThemeProvider } from "@material-ui/core/styles"
 import Listings from './Wellington/Listings'
 import { HashRouter as Router, Route } from "react-router-dom"
@@ -12,9 +12,9 @@ const App = () => {
     <>
       <Router>
 
-      <ThemeProvider theme ={theme} >
-         <LandingPage/>
-          <Listings />
+          <ThemeProvider theme ={theme} >
+             <LandingPage/>
+              <Listings />
         </ThemeProvider>
        
       </Router>
