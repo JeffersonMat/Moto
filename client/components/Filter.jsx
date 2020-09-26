@@ -28,7 +28,7 @@ export default function Filter({city, setCity, guest, setGuest, startDate, setSt
     const handleCityChange = (event) => {
     setCity(event.target.value)
   }
-  
+
     const handleGuestChange = (event) => {
     setGuest(event.target.value)
   }
@@ -39,7 +39,6 @@ export default function Filter({city, setCity, guest, setGuest, startDate, setSt
     setEndDate(date)
     }
    
-
   const classes = useStyles()
   return (
     <div className={classes.root}>

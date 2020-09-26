@@ -1,27 +1,17 @@
-import React from 'react';
+import React from "react"
 
-import data from '../data'
+import { Places } from "./card/Card"
+import { useStyles} from "./Listings.Style"
 
-import Card from './card/Card'
-
-
-
-
-
-export default function Listings({city, guest, startDate, endDate}) {
-
-  // Filter function goes here
-
-  let results = [];
-
-  React.useEffect(() => {
-    results = data.filter(space => space.city === city);
-    console.log(results);
-  })
-
+export default function Listings({ listings, visible }) {
+  const classes = useStyles()
   return (
-    <>
-      {results.map(content => <Card content={content} key={content.city}/>)}
-    </>
+    visible && (
+      <div className={classes.root}>
+        {listings.map((content) => {
+          return <Places content={content} key={content.id} />
+        })}
+      </div>
+    )
   )
 }
