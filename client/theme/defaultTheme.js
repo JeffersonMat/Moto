@@ -1,5 +1,5 @@
-const theme = createMuiTheme({
-  test: {
-    BorderRight: "1px solid red",
-  },
+import { createMuiTheme } from "@material-ui/core/styles"
+
+export default createMuiTheme({
+ 
 })

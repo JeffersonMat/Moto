@@ -1,18 +1,22 @@
 import React from 'react'
 import SearchBar from './LandingPage'
-import {
-  ThemeProvider,
-  createMuiTheme,
-} from "@material-ui/core/styles"
+import {ThemeProvider } from "@material-ui/core/styles"
+import Listings from './Wellington/TaproomBrewery'
+import { HashRouter as Router, Route } from "react-router-dom"
 
 import theme from '../theme/defaultTheme'
+
 const App = () => {
   
   return (
     <>
-      <ThemeProvider theme={theme} >
+      <Router>
+
+      <ThemeProvider theme ={theme} >
          <SearchBar/>
+          <Listings />
         </ThemeProvider>
+        </Router>
     </>
   )
 }

@@ -1,26 +1,44 @@
 import React from "react"
-import "date-fns"
 
+import Listings from "./Wellington/TaproomBrewery"
+
+import "date-fns"
 import DateFnsUtils from "@date-io/date-fns"
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from "@material-ui/pickers"
-
-import {
-  makeStyles,
-  useTheme,
-  ThemeProvider,
-  createMuiTheme,
-} from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles"
 import Input from "@material-ui/core/Input"
 import InputLabel from "@material-ui/core/InputLabel"
 import MenuItem from "@material-ui/core/MenuItem"
 import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
 import Button from "@material-ui/core/Button"
+import Link from "@material-ui/core/Link"
+import { isThisSecond } from "date-fns/esm"
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    height: "100vh",
+    width: "100vw",
+    backgroundColor: "#FFD966",
+   
+  },
+  container: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "absolute",
+    backgroundColor: "white",
+    transform: "translateX(30%)",
+    transform: "translateX(30%)",
+    borderRadius: 38,
+    top: '50%',
+
+    width:"60%",
+    padding: 20,
+  },
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,
@@ -30,17 +48,24 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexWrap: "wrap",
   },
-
   noLabel: {
     marginTop: theme.spacing(3),
   },
+  datePicker: {
+    marginTop: 8,
+    marginLeft: 10,
+   
+  },
 
-    datePicker: {
-      
-    borderRight:theme.test,
+  button: {
+      marginLeft: 10,
+      marginTop:5,
+      alignItems: 'center',    
+    "&:hover": {
+      backgroundColor: "red",
+    },
   },
 }))
-
 const ITEM_HEIGHT = 48
 const ITEM_PADDING_TOP = 8
 const MenuProps = {
@@ -52,102 +77,106 @@ const MenuProps = {
   },
 }
 
-const names = ["Wellington", "Auckland", "Christchurch"]
 
+const cities = ["Wellington", "Auckland", "Christchurch"]
 const guests = [1, 2, 3, 4, 5]
 
-export default function SerachBar() {
-  const [personName, setPersonName] = React.useState([])
 
-  const handleChange = (event) => {
-    setPersonName(event.target.value)
+export default function SearchBar() {
+
+    //States
+    const [city, setCity] = React.useState("")
+    const [guest, setGuest] = React.useState(0)
+    const [startDate, setStartDate] = React.useState(null)
+    const [endDate, setEndDate] = React.useState(null)
+    
+ 
+    const handleCityChange = (event) => {
+    setCity(event.target.value)
   }
-
-  const [selectedDate, setSelectedDate] = React
-    .useState
-    // new Date("2014-08-18T21:11:54")
-    ()
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date)
+  
+    const handleGuestChange = (event) => { 
+    
+    setGuest(event.target.value)
   }
-
+    const handleStartDateChange = (date) => {
+    setStartDate(date)
+    }
+    const handleEndDateChange = (date) => {
+    setEndDate(date)
+    }
+   
 
   const classes = useStyles()
-
   return (
-
-      <div id="background-landing-page">
-        <div id="search-bar-container">
-          <FormControl className={classes.formControl}>
-            <InputLabel id="demo-mutiple-name-label">Where</InputLabel>
-            <Select
-              labelId="demo-mutiple-name-label"
-              id="demo-mutiple-name"
-              value={personName}
-              onChange={handleChange}
-              input={<Input />}
-              MenuProps={MenuProps}
-            >
-              {names.map((name) => (
-                <MenuItem key={name} value={name}>
-                  {name}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-          <FormControl className={classes.formControl}>
-            <InputLabel id="demo-mutiple-name-label">Who</InputLabel>
-            <Select
-              labelId="demo-mutiple-name-label"
-              id="demo-mutiple-name"
-              value={personName}
-              onChange={handleChange}
-              input={<Input />}
-              MenuProps={MenuProps}
-            >
-              {guests.map((guest) => (
-                <MenuItem key={guest} value={guest}>
-                  {guest}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-          <MuiPickersUtilsProvider utils={DateFnsUtils}>
-            <KeyboardDatePicker
-              disableToolbar
-              variant="inline"
-              format="MM/dd/yyyy"
-              margin="normal"
-              id="date-picker-inline"
-              label="Start"
-              className={classes.datePicker}
-              value={selectedDate}
-              onChange={handleDateChange}
-              KeyboardButtonProps={{
-                "aria-label": "change date",
-              }}
-            />
-
-            <KeyboardDatePicker
-              disableToolbar
-              variant="inline"
-              format="MM/dd/yyyy"
-              margin="normal"
-              id="date-picker-inline"
-              label="End"
-              value={selectedDate}
-              onChange={handleDateChange}
-              KeyboardButtonProps={{
-                "aria-label": "change date",
-              }}
-            />
-          </MuiPickersUtilsProvider>
-
-          <Button variant="contained" color="primary" href="#contained-buttons">
-            Go
-          </Button>
-        </div>
+    <div className={classes.root}>
+      <div className={classes.container}>
+        <FormControl className={classes.formControl}>
+          <InputLabel id="demo-mutiple-name-label">Where</InputLabel>
+          <Select
+            labelId="demo-mutiple-name-label"
+            id="demo-mutiple-name"
+            value={city}
+            onChange={handleCityChange}
+            input={<Input />}
+            MenuProps={MenuProps}
+          >
+            {cities.map((city) => (
+              <MenuItem key={city} value={city}>
+                {city}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel id="demo-mutiple-name-label">Who</InputLabel>
+          <Select
+            labelId="demo-mutiple-name-label"
+            id="demo-mutiple-name"
+            value={guest}
+            onChange={handleGuestChange}
+            input={<Input />}
+            MenuProps={MenuProps}
+          >
+            {guests.map((guest) => (
+              <MenuItem key={guest} value={guest}>
+                {guest}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <KeyboardDatePicker
+            disableToolbar
+            variant="inline"
+            format="MM/dd/yyyy"
+            margin="normal"
+            label="Start"
+            className={classes.datePicker}
+            value={startDate}
+            onChange={handleStartDateChange}
+            KeyboardButtonProps={{
+              "aria-label": "change date",
+            }}
+          />
+          <KeyboardDatePicker
+            disableToolbar
+            variant="inline"
+            format="MM/dd/yyyy"
+            margin="normal"
+            label="End"
+            className={classes.datePicker}
+            value={endDate}
+            onChange={handleEndDateChange}
+            KeyboardButtonProps={{
+              "aria-label": "change date",
+            }}
+          />
+        </MuiPickersUtilsProvider>
+        <Button variant="contained" color="primary" className={classes.button}>
+          Go
+        </Button>
       </div>
+    </div>
   )
 }
