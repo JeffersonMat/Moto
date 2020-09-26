@@ -22,17 +22,19 @@ export const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    position: "absolute",
+    // position: "absolute",
     backgroundColor: "white",
-    transform: "translateX(30%)",
-    transform: "translateX(30%)",
+    // transform: "translateX(30%)",
+    // transform: "translateX(30%)",
     borderRadius: 38,
-    top: "50%",
-    width: "60%",
+    // top: "50%",
+    // width: "60%",
+    margin: "120px auto",
+    maxWidth:900,
     padding: 20,
     boxShadow:
           "0px 16px 32px rgba(0, 0, 0, 0.15), 0px 3px 8px rgba(0, 0, 0, 0.1)",
-    overflow:"scroll"
+    // overflow:"scroll"
   },
   formControl: {
     margin: theme.spacing(1),
