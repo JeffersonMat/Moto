@@ -8,7 +8,8 @@ const Logo = () => {
  const classes = useStyles()
     return (
       <Container className={classes.containerLogo}>
-    <img src={"../images/logo/moteLogo.png"}  />
+            <img src={"../images/logo/moteLogo.png"} />
+            <p className={classes.text}>Work Anywhere.</p>
       </Container>
     )
 

@@ -9,7 +9,6 @@ import Collapse from "@material-ui/core/Collapse"
 import Avatar from "@material-ui/core/Avatar"
 import IconButton from "@material-ui/core/IconButton"
 import Typography from "@material-ui/core/Typography"
-import { red } from "@material-ui/core/colors"
 import Favorite from "@material-ui/icons/Favorite"
 import ShareIcon from "@material-ui/icons/Share"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
@@ -28,8 +27,6 @@ export const Places = (content) => {
   
     return (
         <div>
-            listings go here
-             
              
             < Card className={classes.root} >
                 <CardHeader
@@ -43,17 +40,17 @@ export const Places = (content) => {
                             <MoreVertIcon />
                         </IconButton>
                     }
-                    title={name}
+                    title={content.name}
                     subheader="September 14, 2016"
                 />
                 <CardMedia
                     className={classes.media}
                     image="./images/BreweryTaproom.JPG"
-                    title={name}
+                    title={content.name}
                 />
                 <CardContent>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        {content}
+                        {content.content}
                     </Typography>
                 </CardContent>
                 <CardActions disableSpacing>

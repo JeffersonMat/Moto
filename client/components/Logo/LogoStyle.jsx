@@ -15,5 +15,14 @@ export const useStyles = makeStyles((theme) => ({
     transform: "translateX(35%)",
     webkitTransform: "translateX(35%)",
      marginTop:"5%",
-  },
+    },
+    text: {
+        position:"absolute",
+        fontSize: "40px",
+        textAlign: "center",
+        transform: "translateX(-50%)",
+        webkitTransform: "translateX(-50%)",
+        right:"50%",
+         
+  }
 }))
