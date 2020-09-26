@@ -19,21 +19,13 @@ const cities = ["Wellington", "Auckland", "Christchurch"]
 const guests = [1, 2, 3, 4, 5]
 
 
-export default function Filter() {
+export default function Filter({city, setCity, guest, setGuest, startDate, setStartDate, endDate, setEndDate}) {
 
-    //States
-    const [city, setCity] = React.useState("")
-    const [guest, setGuest] = React.useState(0)
-    const [startDate, setStartDate] = React.useState(null)
-    const [endDate, setEndDate] = React.useState(null)
-    
- 
     const handleCityChange = (event) => {
     setCity(event.target.value)
   }
   
-    const handleGuestChange = (event) => { 
-    
+    const handleGuestChange = (event) => {
     setGuest(event.target.value)
   }
     const handleStartDateChange = (date) => {

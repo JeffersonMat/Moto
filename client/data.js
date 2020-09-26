@@ -1,5 +1,6 @@
 module.exports = [
     { id: 1,
+        city: 'Wellington',
       name: "Brewery Taprooms",
       content: "Enter DVB’s Taproom, the window to your Brewery. The place that wants to boost Park Rd for its new reputation of rad. The place where dogs and babies frolick together in hoppiness. At the taproom, you’ll be able to taste all of our delectable beers as well as some of our mate’s beers that we have met along the journey.",
       image: "./images/BreweryTaproom.JPG",
@@ -9,6 +10,7 @@ module.exports = [
     },
 
     { id: 2,
+        city: 'Wellington',
         name: "Parrotdog",
         content: "Enter DVB’s Taproom, the window to your Brewery. The place that wants to boost Park Rd for its new reputation of rad. The place where dogs and babies frolick together in hoppiness. At the taproom, you’ll be able to taste all of our delectable beers as well as some of our mate’s beers that we have met along the journey.",
         image: "./images/BreweryTaproom.JPG",
