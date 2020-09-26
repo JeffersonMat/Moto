@@ -62,9 +62,7 @@ export const Places = ({ content }) => {
                     <IconButton aria-label="add to favorites">
                         <Favorite />
                     </IconButton>
-                    <IconButton aria-label="share">
-                        <ShareIcon />
-                    </IconButton>
+                    
                     <IconButton
                         className={clsx(classes.expand, {
                             [classes.expandOpen]: expanded,
