@@ -28,14 +28,20 @@ export const useStyles = makeStyles((theme) => ({
     transform: "translateX(30%)",
     borderRadius: 38,
     top: "50%",
-
     width: "60%",
     padding: 20,
+    boxShadow:
+      "0px 16px 32px rgba(0, 0, 0, 0.15), 0px 3px 8px rgba(0, 0, 0, 0.1)",
   },
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,
     maxWidth: 300,
+  },
+  formControlInput: {
+    borderRight: "solid 0.5px 	#D3D3D3",
+    paddingRight: 20,
+    paddingLeft: 20,
   },
   chips: {
     display: "flex",
@@ -46,35 +52,15 @@ export const useStyles = makeStyles((theme) => ({
   },
   datePicker: {
     marginTop: 8,
-    marginLeft: 10,
+    marginLeft: 20,
   },
 
-    button: {
-        marginLeft: 10,
-        marginTop: 5,
-        alignItems: "center",
-        "&:hover": {
-            backgroundColor: "red",
-        },
-
+  button: {
+    marginLeft: 10,
+    marginTop: 5,
+    alignItems: "center",
+    "&:hover": {
+      backgroundColor: "red",
     },
-
-     image: {
-            //   position:"absolute",
-            //   transform: "translateX(50%)",
-            //   webkitTransform: "translateX(50%)",
-            //   left: "50%",
-        },
-        containerLogo: {
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "absolute",
-            transform: "translateX(50%)",
-            webkitTransform: "translateX(50%)",
-            left: "50%",
-          
-        }
-  
+  },
 }))

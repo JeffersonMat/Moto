@@ -44,40 +44,44 @@ export default function Filter({city, setCity, guest, setGuest, startDate, setSt
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        <FormControl className={classes.formControl}>
-          <InputLabel id="demo-mutiple-name-label">Where</InputLabel>
-          <Select
-            labelId="demo-mutiple-name-label"
-            id="demo-mutiple-name"
-            value={city}
-            onChange={handleCityChange}
-            input={<Input />}
-            MenuProps={MenuProps}
-          >
-            {cities.map((city) => (
-              <MenuItem key={city} value={city}>
-                {city}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-        <FormControl className={classes.formControl}>
-          <InputLabel id="demo-mutiple-name-label">Who</InputLabel>
-          <Select
-            labelId="demo-mutiple-name-label"
-            id="demo-mutiple-name"
-            value={guest}
-            onChange={handleGuestChange}
-            input={<Input />}
-            MenuProps={MenuProps}
-          >
-            {guests.map((guest) => (
-              <MenuItem key={guest} value={guest}>
-                {guest}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+        <div className={classes.formControlInput}>
+          <FormControl className={classes.formControl}>
+            <InputLabel id="demo-mutiple-name-label">Where</InputLabel>
+            <Select
+              labelId="demo-mutiple-name-label"
+              id="demo-mutiple-name"
+              value={city}
+              onChange={handleCityChange}
+              input={<Input />}
+              MenuProps={MenuProps}
+            >
+              {cities.map((city) => (
+                <MenuItem key={city} value={city}>
+                  {city}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
+        <div className={classes.formControlInput}>
+          <FormControl className={classes.formControl}>
+            <InputLabel id="demo-mutiple-name-label">Who</InputLabel>
+            <Select
+              labelId="demo-mutiple-name-label"
+              id="demo-mutiple-name"
+              value={guest}
+              onChange={handleGuestChange}
+              input={<Input />}
+              MenuProps={MenuProps}
+            >
+              {guests.map((guest) => (
+                <MenuItem key={guest} value={guest}>
+                  {guest}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <KeyboardDatePicker
             disableToolbar
@@ -106,9 +110,9 @@ export default function Filter({city, setCity, guest, setGuest, startDate, setSt
             }}
           />
         </MuiPickersUtilsProvider>
-        <Button variant="contained" color="primary" className={classes.button}>
+        {/* <Button variant="contained" color="primary" className={classes.button}>
           Go
-        </Button>
+        </Button> */}
       </div>
     </div>
   )

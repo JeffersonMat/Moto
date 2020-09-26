@@ -18,13 +18,11 @@ export default function Listings({city, guest, startDate, endDate}) {
     results = data.filter(space => space.city === city);
     console.log(results);
   });
-  // <> <Places content={space}/> </>
+
 
   return (
     <>
-      {results.map((space, index) => (
-        <h1>{space.name}</h1>
-      ))}
+      {results.map(content => { return <h1>{content.city}</h1>, console.log(content, "contetn");})}
     </>
   )
 }
