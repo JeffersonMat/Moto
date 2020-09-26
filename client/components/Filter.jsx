@@ -83,6 +83,7 @@ export default function Filter({city, setCity, guest, setGuest, startDate, setSt
           </FormControl>
         </div>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
+           <div className={classes.formControlInput}>
           <KeyboardDatePicker
             disableToolbar
             variant="inline"
@@ -95,7 +96,9 @@ export default function Filter({city, setCity, guest, setGuest, startDate, setSt
             KeyboardButtonProps={{
               "aria-label": "change date",
             }}
-          />
+            />
+          </div>
+           
           <KeyboardDatePicker
             disableToolbar
             variant="inline"
@@ -108,7 +111,8 @@ export default function Filter({city, setCity, guest, setGuest, startDate, setSt
             KeyboardButtonProps={{
               "aria-label": "change date",
             }}
-          />
+            />
+         
         </MuiPickersUtilsProvider>
         {/* <Button variant="contained" color="primary" className={classes.button}>
           Go
