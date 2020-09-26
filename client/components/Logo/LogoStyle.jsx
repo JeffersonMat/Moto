@@ -10,22 +10,20 @@ export const useStyles = makeStyles((theme) => ({
     width: "50%",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent:"center",
     transform: "translateX(35%)",
     webkitTransform: "translateX(35%)",
     marginTop: "5%",
   },
     text: {
-
     position: "absolute",
     alignItems: "center",
-        justifyContent: "center",
-        top: "70%",
-        color: "#fff",
+    justifyContent: "center",
+    top: "70%",
+    color: "#fff",
     fontSize: "50px",
     textAlign: "center",
     transform: "translateX(-3%)",
     webkitTransform: "translateX(-3%)",
-
   },
 }))

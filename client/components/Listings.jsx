@@ -2,7 +2,7 @@ import React from 'react';
 
 import data from '../data'
 
-import Places from './Places'
+import Card from './card/Card'
 
 
 
@@ -21,7 +21,7 @@ export default function Listings({city, guest, startDate, endDate}) {
 
   return (
     <>
-      {results.map(content => <Places content={content} key={content.city}/>)}
+      {results.map(content => <Card content={content} key={content.city}/>)}
     </>
   )
 }
