@@ -17,7 +17,7 @@ export default function Listings({city, guest, startDate, endDate}) {
   React.useEffect(() => {
     results = data.filter(space => space.city === city);
     console.log(results);
-  });
+  })
 
   return (
     <>
