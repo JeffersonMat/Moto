@@ -1,6 +1,6 @@
 import React from 'react';
 
-import data from '../../data'
+import data from '../data'
 
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';

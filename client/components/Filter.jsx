@@ -14,17 +14,14 @@ import InputLabel from "@material-ui/core/InputLabel"
 import MenuItem from "@material-ui/core/MenuItem"
 import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
-import Button from "@material-ui/core/Select"
-
-
+import Button from "@material-ui/core/Button"
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
     width: "100vw",
-    backgroundColor: "#FFD966",
-   
+    backgroundColor: "#FFD966",  
   },
   container: {
     display: "flex",
@@ -36,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
     transform: "translateX(30%)",
     borderRadius: 38,
     top: '50%',
-
     width:"60%",
     padding: 20,
   },
