@@ -22,7 +22,7 @@ export default function Listings({city, guest, startDate, endDate}) {
 
   return (
     <>
-      {results.map(content => { return <h1>{content.city}</h1>, console.log(content, "contetn");})}
+      {results.map(content => { return <h1>{content.city}</h1>, console.log(content, "content");})}
     </>
   )
 }
