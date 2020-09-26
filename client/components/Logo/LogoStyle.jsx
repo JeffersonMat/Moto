@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles"
 
 export const useStyles = makeStyles((theme) => ({
   image: {
-    
     alignItems: "center",
     justifyContent: "center",
   },
@@ -11,18 +10,20 @@ export const useStyles = makeStyles((theme) => ({
     width: "50%",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent:"center",
     transform: "translateX(35%)",
     webkitTransform: "translateX(35%)",
-     marginTop:"5%",
-    },
+    marginTop: "5%",
+  },
     text: {
-        position:"absolute",
-        fontSize: "40px",
-        textAlign: "center",
-        transform: "translateX(-50%)",
-        webkitTransform: "translateX(-50%)",
-        right:"50%",
-         
-  }
+    position: "absolute",
+    alignItems: "center",
+    justifyContent: "center",
+    top: "70%",
+    color: "#fff",
+    fontSize: "50px",
+    textAlign: "center",
+    transform: "translateX(-3%)",
+    webkitTransform: "translateX(-3%)",
+  },
 }))

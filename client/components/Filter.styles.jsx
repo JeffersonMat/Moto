@@ -31,7 +31,8 @@ export const useStyles = makeStyles((theme) => ({
     width: "60%",
     padding: 20,
     boxShadow:
-      "0px 16px 32px rgba(0, 0, 0, 0.15), 0px 3px 8px rgba(0, 0, 0, 0.1)",
+          "0px 16px 32px rgba(0, 0, 0, 0.15), 0px 3px 8px rgba(0, 0, 0, 0.1)",
+    overflow:"scroll"
   },
   formControl: {
     margin: theme.spacing(1),
